@@ -1,0 +1,24 @@
+﻿@model IEnumerable<AspNetMVC.Models.McGuffin>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Ajax.BeginForm(
+	new AjaxOptions()
+	{
+		HttpMethod = "get",
+		InsertionMode = InsertionMode.Replace,
+		UpdateTargetId = "results"
+	}))
+{
+	<input type="search" name="criteria" />
+	<input type="submit" value="Search" />
+}
+
+<div id="results">
+	@Html.Partial("_Items", Model)
+</div>
+

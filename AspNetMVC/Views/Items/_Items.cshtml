@@ -1,0 +1,9 @@
+﻿@model IEnumerable<AspNetMVC.Models.McGuffin>
+
+@foreach (var item in Model)
+{
+	<div>
+		<h3>@Html.DisplayFor(i => item.Name)</h3>
+		<img src="@item.ImageUrl" />
+	</div>
+}
