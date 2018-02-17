@@ -13,7 +13,7 @@ namespace AspNetMVC.Controllers
 
 		static ItemsController()
 		{
-			_items = Enumerable.Range(0, 100).Select(x => McGuffin.Create()).ToArray();
+			_items = Enumerable.Range(0, 10000).Select(x => McGuffin.Create()).ToArray();
 		}
 
 		// GET: Items
@@ -29,5 +29,19 @@ namespace AspNetMVC.Controllers
 
             return View(items);
         }
-    }
+
+
+		public ActionResult Autocomplete(string term)
+		{
+			var items = _items
+				.Where(i => term == null || i.Name.StartsWith(term, StringComparison.OrdinalIgnoreCase))
+				.Take(10)
+				.Select(i => new
+				{
+					label = i.Name
+				});
+
+			return Json(items, JsonRequestBehavior.AllowGet);
+		}
+	}
 }

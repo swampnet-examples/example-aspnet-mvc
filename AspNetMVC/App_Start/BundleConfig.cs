@@ -10,7 +10,9 @@ namespace AspNetMVC
 		{
 			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-{version}.js",
-						"~/Scripts/jquery.unobtrusive-ajax.js"
+						"~/Scripts/jquery-ui-{version}.js",
+						"~/Scripts/jquery.unobtrusive-ajax.js",
+						"~/Scripts/swampnet.js"
 						));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -27,6 +29,7 @@ namespace AspNetMVC
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
+					  "~/Content/themes/base/jquery-ui.css",
 					  "~/Content/site.css"));
 		}
 	}
