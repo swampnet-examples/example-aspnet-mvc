@@ -30,6 +30,7 @@ namespace AspNetMVC
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
 					  "~/Content/themes/base/jquery-ui.css",
+					  "~/Content/PagedList.css",
 					  "~/Content/site.css"));
 		}
 	}

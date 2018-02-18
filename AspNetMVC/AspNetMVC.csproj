@@ -199,6 +199,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PagedItemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -361,6 +362,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\PagedItems\Index.cshtml" />
+    <Content Include="Views\PagedItems\_Items.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,16 @@
+﻿
+@model IPagedList<McGuffin>
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form method="get" action="@Url.Action("index")" data-swampnet-ajax="true" data-swampnet-target="#results">
+	<input type="search" name="criteria" data-swampnet-autocomplete="@Url.Action("Autocomplete")" />
+	<input type="submit" value="Search" />
+</form>
+
+@Html.Partial("_Items", Model)
+

@@ -1,0 +1,19 @@
+﻿@model IPagedList<McGuffin>
+
+<div id="results">
+
+	<div class="pagedList" data-swampnet-target="#results">
+		@Html.PagedListPager(
+			Model, 
+			page => Url.Action("Index", new { page }),
+			PagedListRenderOptions.MinimalWithItemCountText)
+	</div>
+
+	@foreach (var item in Model)
+	{
+		<div>
+			<h3>@Html.DisplayFor(i => item.Name) - @Html.DisplayFor(i => item.Id)</h3>
+			<img src="@item.ImageUrl" />
+		</div>
+	}
+</div>
